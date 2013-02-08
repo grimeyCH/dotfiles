@@ -7,7 +7,7 @@ alias netlisteners='lsof -i -P | grep LISTEN'
 PS1='\n\t \u @ \H in \w \n $: '
 
 # coloring directories
-LS_COLORS='di=0;35' ; export LS_COLORS
+LS_COLORS='di=1;36' ; export LS_COLORS
 
 #Available Colors:
 
