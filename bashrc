@@ -21,3 +21,18 @@ LS_COLORS='di=0;35' ; export LS_COLORS
 #Light Grey = 0;37
 #Black = 30
 #Dark Grey= 1;30
+
+#Opens a "telnet"-like connection to an SMTP server, using the OpenSSL SSL/TLS client program.
+#This command will connect, then issue a STARTTLS-command to the SMTP-server, 
+#after which the communication will be encrypted.
+
+function openssl_smtp() {
+    addr=$1
+ 
+    if [[ ! "$addr" =~ [:] ]]
+    then
+        addr="${addr}:25"
+    fi
+ 
+    openssl s_client -starttls smtp -crlf -connect $addr
+}
