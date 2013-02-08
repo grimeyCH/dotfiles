@@ -1,6 +1,8 @@
 # User specific aliases and functions
 alias la='ls -la'
 
+#Show active network listeners
+alias netlisteners='lsof -i -P | grep LISTEN'
 
 PS1='\n\t \u @ \H in \w \n $: '
 
