@@ -1,3 +1,5 @@
+export PATH=$PATH:/usr/local/bin
+
 # User specific aliases and functions
 alias la='ls -la'
 
