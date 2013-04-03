@@ -1,0 +1,14 @@
+[user]
+    name = Andreas Grimm
+    email = grimm@netdot.ch
+[color]
+    ui = true
+[alias]
+    st = status
+    co = checkout
+    ci = commit
+    br = branch
+    l = log --graph --full-history --pretty=format:'%C(red)%h%C(reset) - %C(yellow)%C(yellow)%s %C(green)(%an, %cr)%C(reset)' --abbrev-commit --date=relative
+    contains = branch --contains
+[push]
+    default = simple
