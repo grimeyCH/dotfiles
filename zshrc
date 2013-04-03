@@ -24,13 +24,16 @@ ZSH_THEME="lukerandall"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew gnu-utils)
+plugins=(git brew gnu-utils zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 unsetopt correct_all
 zstyle ':completion:*' insert-tab false
+
+# I hate underscores ;-)
+ZSH_HIGHLIGHT_STYLES[path]='fg=white,bold'
 
 # Don't keep duplicate entries (same command twice in a row) in history file
 setopt histignoredups
