@@ -1,7 +1,7 @@
 export PATH=$PATH:/usr/local/bin
 
 # User specific aliases and functions
-alias la='ls -la'
+alias la='ls -lahF'
 
 #Show active network listeners
 alias netlisteners='lsof -i -P | grep LISTEN'
