@@ -1,0 +1,80 @@
+function myaliases() {
+    grep -E '(alias|function)' ~/aliases | cut -d\= -f1 | cut -d\  -f2
+}
+
+# simplify
+alias la='ls -lhA'
+alias ll='ls -lh'
+alias today='date "+%Y-%m-%d"'
+
+function lt() {
+    if [ -z "$1" ]
+    then
+        ls -lrt
+    else
+        ls -lrt | tail -$1
+    fi
+}
+
+# git
+alias ffmaster='git checkout master'
+alias status='git status'
+
+# development
+alias server='src/manage.py runserver'
+alias js='gulp webpack-server'
+alias ea='source env/bin/activate'
+
+# system
+alias netlisteners='lsof -i -P | grep LISTEN'
+
+# misc
+alias weather='curl -4 http://wttr.in/Zurich'
+alias moon='curl -4 http://wttr.in/Moon'
+function cheat() {
+	curl cheat.sh/${1}
+}
+
+# useful functions
+function check-python-commit() {
+    # Auto-check for pep8 so I don't check in bad code
+    FILES=$(git show --name-only | grep -e '\.py$')
+
+    if [ -n "$FILES"  ]; then
+        pylint $FILES
+    fi
+}
+
+function bdecode() {
+    echo $1 | base64 -d
+}
+
+#Opens a "telnet"-like connection to an SMTP server, using the OpenSSL SSL/TLS client program.
+#This command will connect, then issue a STARTTLS-command to the SMTP-server, 
+#after which the communication will be encrypted.
+function openssl_smtp() {
+    addr=$1
+ 
+    if [[ ! "$addr" =~ [:] ]]
+    then
+        addr="${addr}:25"
+    fi
+ 
+    openssl s_client -starttls smtp -crlf -connect $addr
+}
+
+function myip() {
+	curl icanhazip.com
+}
+
+function ipl() {
+	if [ -z $1 ]
+	then
+		echo "Missing IP as parameter"
+	fi
+	http -b https://iplist.cc/api/$1
+}
+
+function excel() {
+	/mnt/c/Program\ Files/Microsoft\ Office/root/Office16/EXCEL.EXE ${1} &
+}

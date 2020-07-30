@@ -4,11 +4,13 @@
 [color]
     ui = true
 [alias]
-    st = status
+    st = status -sb
     co = checkout
     ci = commit
     br = branch
     l = log --graph --full-history --pretty=format:'%C(red)%h%C(reset) - %C(yellow)%C(yellow)%s %C(green)(%an, %cr)%C(reset)' --abbrev-commit --date=relative
     contains = branch --contains
 [push]
-    default = simple
+    default = current
+[diff "po"]
+    textconv=msgcat --no-location --no-wrap --sort-output
