@@ -1,5 +1,5 @@
 function myaliases() {
-    grep -E '(alias|function)' ~/aliases | cut -d\= -f1 | cut -d\  -f2
+    grep -E '(alias|function)' ~/.aliases | cut -d\= -f1 | cut -d\  -f2
 }
 
 # simplify
