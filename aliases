@@ -49,6 +49,10 @@ function bdecode() {
     echo $1 | base64 -d
 }
 
+function jsdecode() {
+	bdecode $1 | python3 -m json.tool
+}
+
 #Opens a "telnet"-like connection to an SMTP server, using the OpenSSL SSL/TLS client program.
 #This command will connect, then issue a STARTTLS-command to the SMTP-server, 
 #after which the communication will be encrypted.
