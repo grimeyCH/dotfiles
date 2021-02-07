@@ -1,8 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Install dotfiles
 for symlink in bashrc gitconfig vimrc zshrc aliases
 do
-	mv ~/.$symlink ~/.$symlink.bck
-	ln -s "$PWD/$symlink" ~/.$symlink
+	if [ -f ~/.${symlink} ]; then
+		mv ~/.${symlink} ~/.${symlink.bck}
+	fi
+	ln -s "$PWD/${symlink}" ~/.${symlink}
 done
